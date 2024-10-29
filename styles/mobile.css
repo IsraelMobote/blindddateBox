@@ -15,7 +15,8 @@ h1 {
 }
 
 .login {
-    width: clamp(500px, 90%, 600px);
+    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 5rem 0;
 }
