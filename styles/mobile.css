@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgba(0, 0, 0, 0.979);
+    background-color: rgba(0, 0, 0, 0.959);
     height: 100vh;
 }
 
@@ -79,11 +79,12 @@ h1 {
     color: yellow;
 }
 
-.copyright {
+#copyright {
+    width: 100%;
     font-size: 1.2rem;
-    margin-bottom: 0;
+    margin: 3rem 0 0;
+    position: absolute;
+    bottom: 3rem;
     text-align: center;
-    display: fixed;
-    bottom: 1rem;
     color: rgba(233, 233, 220, 0.623);
 }
