@@ -83,7 +83,7 @@ h1 {
     width: 100%;
     font-size: 1.2rem;
     margin: 3rem 0 0;
-    position: absolute;
+    position: fixed;
     bottom: 3rem;
     text-align: center;
     color: rgba(233, 233, 220, 0.623);
