@@ -68,7 +68,7 @@ h1 {
 .login p {
     font-size: 1.4rem;
     width: 75%;
-    margin: 3rem auto;
+    margin: 3rem auto 0;
     color: white;
 }
 
@@ -80,8 +80,9 @@ h1 {
 
 .copyright {
     font-size: 1.2rem;
+    margin-bottom: 0;
     text-align: center;
     display: fixed;
-    bottom: 0.2rem;
+    bottom: 1rem;
     color: rgba(233, 233, 220, 0.623);
 }
