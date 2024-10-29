@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.856);
+}
+
+h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    padding: 3rem 1rem 1rem;
+    color: rgb(248, 248, 226);
+}
+
+.login {
+    width: clamp(500px, 90%, 600px);
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+
+.login label, .login input, .login button{
+    display: block;
+}
+
+.login label {
+    margin-left: 10%;
+    margin-bottom: 0.7rem;
+    font-size: 1.5rem;
+    color: rgb(255, 230, 0);
+}
+.login input {
+    font-size: 1.4rem;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    height: 3rem;
+    border-radius: 11px;
+    box-sizing: border-box;
+}
+
+.login button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-left: 10.5%;
+    width: 20%;
+    height: 2.5rem;
+    background-color: rgb(255, 230, 0);
+    border-radius: 11px;
+}
+
+.login button:hover {
+   background-color: rgba(31, 30, 30, 0.712);
+   color: yellow;
+   border: 2px solid yellow;
+}
+
+.login hr {
+    width: 80%;
+    margin: 1.5rem auto;
+}
+
+.login p {
+    font-size: 1.3rem;
+    width: 75%;
+    margin: 3rem auto;
+    color: white;
+}
+
+.login span {
+    font-weight: 500;
+    text-decoration: underline;
+    color: yellow;
+}
+
+.copyright {
+    font-size: 1.3rem;
+    text-align: center;
+    display: fixed;
+    bottom: 0.2rem;
+    color: rgba(233, 233, 220, 0.623);
+}
