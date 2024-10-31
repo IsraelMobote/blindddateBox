@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #040416;
+    background-color: #070722;
     height: 100vh;
 }
 
@@ -114,7 +114,6 @@ h1 {
     gap: 20%;
     justify-content: space-evenly;
     height: fit-content;
-    align-self: center;
 }
 
 .pagetwo span {
@@ -126,4 +125,17 @@ h1 {
     background-color: yellow;
     padding: 12px 8px;
     border-radius: 50%;
+}
+
+
+.pagetwotext {
+    display: none;
+}
+
+.pagetwotext.show {
+    display: block;
+    font-size: 1.7rem;
+    text-align: left;
+    padding: 10rem 15% 1rem;
+    color: white;
 }

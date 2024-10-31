@@ -3,6 +3,7 @@ const login2 = document.querySelector('#login2');
 
 const pageone = document.querySelector('.pageone');
 const pagetwo = document.querySelector('.pagetwo');
+const pagetwotext = document.querySelector('.pagetwotext');
 
 
 const circle1 = document.querySelector('#circle1');
@@ -64,8 +65,6 @@ function showAnimation1() {
             }, 200);
         }, 200);
     }, 200);
-    console.log(num);
-
 };
 
 
@@ -74,6 +73,7 @@ function showAnimation1() {
 login2.addEventListener('click', function () {
     pageone.classList.add('hide');
     pagetwo.classList.add('show');
+    pagetwotext.classList.add('show');
 
     showAnimation1();
 })
