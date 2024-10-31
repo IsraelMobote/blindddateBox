@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -16,7 +16,7 @@ h1 {
     color: white;
 }
 
-.login {
+.loginpage {
     width: 90%;
     max-width: 600px;
     margin: 0 auto;
@@ -24,17 +24,20 @@ h1 {
 }
 
 
-.login label, .login input, .login button{
+.loginpage label,
+.loginpage input,
+.loginpage button {
     display: block;
 }
 
-.login label {
+.loginpage label {
     margin-left: 10%;
     margin-bottom: 0.7rem;
     font-size: 1.5rem;
     color: rgb(255, 230, 0);
 }
-.login input {
+
+.loginpage input {
     font-size: 1.4rem;
     width: 80%;
     margin: 0 auto;
@@ -44,7 +47,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.login button {
+.loginpage button {
     font-size: 1.2rem;
     font-weight: 700;
     margin-top: 1rem;
@@ -55,25 +58,25 @@ h1 {
     border-radius: 11px;
 }
 
-.login button:hover {
-   background-color: rgba(31, 30, 30, 0.712);
-   color: yellow;
-   border: 2px solid yellow;
+.loginpage button:hover {
+    background-color: rgba(31, 30, 30, 0.712);
+    color: yellow;
+    border: 2px solid yellow;
 }
 
-.login hr {
+.loginpage hr {
     width: 80%;
     margin: 1.5rem auto;
 }
 
-.login p {
+.loginpage p {
     font-size: 1.4rem;
     width: 75%;
     margin: 3rem auto 0;
     color: white;
 }
 
-.login span {
+.loginpage span {
     font-weight: 500;
     text-decoration: underline;
     color: yellow;
@@ -87,4 +90,40 @@ h1 {
     bottom: 3rem;
     text-align: center;
     color: rgba(233, 233, 220, 0.623);
+}
+
+/*----------------    page two styling     --------------*/
+
+.pageone.hide {
+    display: none;
+}
+
+.pagetwo {
+    display: none;
+}
+
+.pagetwo.show {
+    display: flex;
+    height: 100%;
+}
+
+.pagetwo>p {
+    width: 100%;
+    padding: 0 20%;
+    display: flex;
+    gap: 20%;
+    justify-content: space-evenly;
+    height: fit-content;
+    align-self: center;
+}
+
+.pagetwo span {
+    display: none;
+}
+
+.pagetwo span.show {
+    display: block;
+    background-color: yellow;
+    padding: 12px 8px;
+    border-radius: 50%;
 }
