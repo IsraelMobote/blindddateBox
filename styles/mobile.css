@@ -48,14 +48,14 @@ h1 {
     display: block;
 }
 
-.loginpage label {
+.loginpage label, #userform label, #userform2 label {
     margin-left: 10%;
     margin-bottom: 0.7rem;
     font-size: 1.5rem;
     color: rgb(255, 230, 0);
 }
 
-.loginpage input {
+.loginpage input, #userform select, #userform2 select {
     font-size: 1.4rem;
     width: 80%;
     margin: 0 auto;
@@ -65,7 +65,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.loginpage button {
+.loginpage button, #userform button {
     font-size: 1.2rem;
     font-weight: 700;
     margin-top: 1rem;
@@ -156,4 +156,100 @@ h1 {
     text-align: left;
     padding: 10rem 15% 1rem;
     color: white;
+}
+
+/*----------------    Main App Page styling     --------------*/
+
+
+
+.mainAppPage {
+    display: none;
+}
+
+.mainAppPage.show {
+    display: block;
+    margin: 2rem 1rem;
+}
+
+.mainAppPage h1 {
+    font-size: 2.1rem;
+    margin: 0 auto;
+}
+
+.heroSection {
+    padding: 2rem 2rem;
+    border-radius: 22px;
+    background-image: linear-gradient(to bottom right, rgba(135, 207, 235, 0.37), rgba(135, 207, 235, 0.719), rgba(135, 207, 235, 0.37));
+}
+
+.heroImages {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heroImages #tiltedImage1 {
+    width: 40%;
+    height: 15rem;
+    transform: rotateZ(-15deg);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 0, 0.877);
+    box-shadow: 0 0 12px 3px grey;
+}
+
+.heroImages #tiltedImage2 {
+    width: 40%;
+    height: 15rem;
+    transform: rotateZ(15deg);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 0, 0.877);
+    box-shadow: 0 0 12px 3px grey;
+}
+
+.heroImages #centerImage {
+    width: 50%;
+    height: 15rem;
+    position: absolute;
+    left: 25%;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 0, 0.877);
+    box-shadow: 0 0 12px 3px grey;
+}
+
+.mainAppPage p {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.mainAppPage h2 {
+    color: white;
+    font-size: 1.7rem;
+    font-stretch: expanded;
+    text-align: center;
+    margin: 5rem auto 0.5rem;
+}
+#userform button.hide {
+    display: none;
+}
+
+#userform2 {
+    display: none;
+}
+
+#userform2.show {
+    display: block;
+}
+
+#userform select, #userform2 select {
+
+    font-size: 1.1rem;
+    width: 40%;
+    margin: 1rem;
+    padding: 0.5rem;
+    height: 3rem;
+    border-radius: 11px;
 }

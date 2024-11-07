@@ -4,6 +4,7 @@ const login2 = document.querySelector('#login2');
 const pageone = document.querySelector('.pageone');
 const pagetwo = document.querySelector('.pagetwo');
 const pagetwotext = document.querySelector('.pagetwotext');
+const mainAppPage = document.querySelectorAll('.mainAppPage');
 
 
 const circle1 = document.querySelector('#circle1');
@@ -51,6 +52,9 @@ function showAnimation1() {
                                                         circle5.classList.add('show');
                                                         setTimeout(() => {
                                                             circle6.classList.add('show');
+                                                            setTimeout(() => {
+                                                                hidePageTwo();
+                                                            }, 500);
                                                         }, 200);
                                                     }, 200);
                                                 }, 200);
@@ -67,8 +71,72 @@ function showAnimation1() {
     }, 200);
 };
 
-
-
+const data = [
+    {
+        "name": "Meiran",
+        "members": [
+            "Israel",
+            "Mary",
+            "Emmanuel"
+        ]
+    },
+    {
+        "name": "Iyana-Paja",
+        "members": [
+            "d",
+            "dee",
+            "dd"
+        ]
+    },
+    {
+        "name": "Abule-Egba",
+        "members": [
+            "Israel",
+            "Mary",
+            "Emmanuel"
+        ]
+    },
+    {
+        "name": "Orile-Agege",
+        "members": [
+            "Rose",
+            "Rachel",
+            "Damilola"
+        ]
+    },
+    {
+        "name": "Sango",
+        "members": [
+            "Israel",
+            "Mary",
+            "Emmanuel"
+        ]
+    },
+    {
+        "name": "Oju-Ore",
+        "members": [
+            "Israel",
+            "Mary",
+            "Emmanuel"
+        ]
+    },
+    {
+        "name": "Alakuko",
+        "members": [
+            "Israel",
+            "Mary",
+            "Emmanuel"
+        ]
+    },
+    {
+        "name": "Ijoko",
+        "members": [
+            "Israel",
+            "Mary",
+            "Emmanuel"
+        ]
+    }
+]
 
 login2.addEventListener('click', function () {
     pageone.classList.add('hide');
@@ -78,4 +146,57 @@ login2.addEventListener('click', function () {
     showAnimation1();
 })
 
+function hidePageTwo() {
+    pagetwo.classList.remove('show');
+    pagetwotext.classList.remove('show');
+    mainAppPage.forEach(element => {
+        element.classList.add('show');
+    });
+}
 
+const wards = document.querySelector('#wards');
+const userform = document.querySelector('#userform');
+
+const button1 = document.querySelector('#userform button');
+const userform2 = document.querySelector('#userform2');
+const names = document.querySelector('#names')
+
+function populateSelectForm(list) {
+    list.forEach(element => {
+        const option = document.createElement('option');
+        option.innerHTML = element.name;
+        wards.append(option);
+    });
+
+}
+
+
+populateSelectForm(data);
+
+
+userform.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (wards.value != 'Select your ward') {
+        console.log(wards.value);
+        button1.classList.add('hide');
+        userform2.classList.add('show');
+        populateSelectForm2(data);
+        wards.setAttribute('disabled','true');
+    }
+});
+
+function populateSelectForm2(list) {
+    list.forEach(element => {
+       if(wards.value == element.name) {
+            const opt = document.createElement('option');
+            opt.innerHTML = 'Select name';
+            names.append(opt);
+            element['members'].forEach(name => {
+                const option = document.createElement('option');
+                option.innerHTML = name;
+                names.append(option);
+            });
+       }
+    });
+
+}
