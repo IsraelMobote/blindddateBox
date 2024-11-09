@@ -157,9 +157,10 @@ function hidePageTwo() {
 const wards = document.querySelector('#wards');
 const userform = document.querySelector('#userform');
 
-const button1 = document.querySelector('#userform button');
+const button1 = document.querySelector('#enter');
 const userform2 = document.querySelector('#userform2');
-const names = document.querySelector('#names')
+const names = document.querySelector('#names');
+const editButton = document.querySelector('#editButton');
 
 function populateSelectForm(list) {
     list.forEach(element => {
@@ -177,9 +178,12 @@ populateSelectForm(data);
 userform.addEventListener('submit', function(e) {
     e.preventDefault();
     if (wards.value != 'Select your ward') {
-        console.log(wards.value);
+      
         button1.classList.add('hide');
         userform2.classList.add('show');
+
+        editButton.classList.add('show');
+        getprofileButton.classList.add('show');
         populateSelectForm2(data);
         wards.setAttribute('disabled','true');
     }
@@ -200,3 +204,57 @@ function populateSelectForm2(list) {
     });
 
 }
+
+editButton.addEventListener('click', function() {
+
+    button1.classList.remove('hide');
+
+    editButton.classList.remove('show');
+
+    names.innerHTML = '';
+    userform2.classList.remove('show');
+    getprofileButton.classList.remove('show');
+    wards.removeAttribute('disabled');
+});
+
+const getprofileButton = document.querySelector('#getprofile');
+
+const usercard = document.querySelector('#usercard');
+
+const cardLine = document.querySelector('.cardLine');
+
+function populateUsercard() {
+
+    usercard.innerHTML = '';
+    const profileImg = document.createElement('img');
+    profileImg.setAttribute('src','images/profile.jpg');
+    const div = document.createElement('div');
+
+    usercard.append(profileImg);
+    let number = 0;
+    cardfields.forEach(element => {
+
+        const innerdiv = document.createElement('div');
+        const h3 = document.createElement('h3');
+        h3.textContent = element;
+        const p = document.createElement('p');
+        p.textContent = 'sample content';
+
+        innerdiv.append(h3);
+        innerdiv.append(p);
+
+        div.append(innerdiv);
+        usercard.append(div);
+        number = number + 1;
+        console.log(number);
+    }  )
+};
+
+
+const cardfields = ['Name','Ward', 'Height','Age-range' , 'Personality', 'Look', 'Hobbies','Dislike'];
+
+getprofileButton.addEventListener('click', function() {
+    cardLine.classList.add('show');
+    usercard.classList.add('show');
+    populateUsercard();
+});
