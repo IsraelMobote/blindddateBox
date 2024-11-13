@@ -313,7 +313,7 @@ const backToHome = document.querySelector('#special span');
 const showMatchesButton = document.querySelector('#showMatchesButton');
 
 const buttonAnimation = document.querySelector('.buttonAnimation');
-const profileSection = document.querySelectorAll('.profileSection');
+const profileSection = document.querySelector('.profileSection');
 
 let specialNumber = 0
 
@@ -337,10 +337,17 @@ backToHome.addEventListener('click', function () {
         element.classList.add('show');
     });
 
+    profileSection.classList.remove('show');
+
 })
 
 showMatchesButton.addEventListener('click', function () {
 
+// the statement is to empty the profile matches div so that it can be empty when 
+// new matches are added for another person
+    profileMatches.innerHTML = '';
+
+// the statement is to prepare the animation before running the animation function
     circle3.forEach(element => {
         element.classList.remove('show');
     });
@@ -356,10 +363,8 @@ showMatchesButton.addEventListener('click', function () {
 
     specialNumber = 1;
   
+        profileSection.classList.add('show');
     
-    profileSection.forEach(element => {
-        element.classList.add('show');
-    });
 
     pagetwotext[1].classList.add('show');
     pagetwo[1].classList.add('show');
@@ -370,12 +375,13 @@ showMatchesButton.addEventListener('click', function () {
 
 const profileMatches = document.querySelector('#profileMatches');
 
+const random = [1,2,3,4,5];
 
 function populateProfileMatches() {
 
     profileMatches.innerHTML = '';
 
-    cardfields.forEach(element => {
+    random.forEach(element => {
         const firstDiv = document.createElement('div');
         firstDiv.setAttribute('class', 'flip-card');
 
@@ -385,10 +391,22 @@ function populateProfileMatches() {
         const flipCardFront = document.createElement('div');
         flipCardFront.setAttribute('class', 'flip-card-front');
 
-        const heading = document.createElement('h1');
-        heading.textContent = element;
+        const personality = document.createElement('p');
+        personality.textContent = `Personality : ${'null'}`;
 
-        flipCardFront.append(heading);
+        const ageRange = document.createElement('p');
+        ageRange.textContent = `Age-Range : ${'null'}`;
+
+        const height = document.createElement('p');
+        height.textContent = `Height : ${'null'}`;
+
+        const look = document.createElement('p');
+        look.textContent = `Look : ${'null'}`;
+
+        flipCardFront.append(personality);
+        flipCardFront.append(ageRange);
+        flipCardFront.append(height);
+        flipCardFront.append(look);
 
         const flipCardBack = document.createElement('div');
         flipCardBack.setAttribute('class', 'flip-card-back');
