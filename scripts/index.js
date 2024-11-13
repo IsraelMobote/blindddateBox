@@ -185,6 +185,10 @@ const data = [
     }
 ]
 
+password.addEventListener('click', function() {
+    passwordIncorrect.classList.remove('show');
+})
+
 login1.addEventListener('click', function (ele) {
     ele.preventDefault();
     if (password.value == 'blinddate') {
