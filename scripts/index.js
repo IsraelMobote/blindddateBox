@@ -308,7 +308,9 @@ function populateUsercard() {
 
 const cardfields = ['Name', 'Ward', 'Height', 'Age-range', 'Personality', 'Look', 'Hobbies', 'Dislike'];
 const usercardDivider = document.querySelector('#usercardDivider');
-const showMatchesButton = document.querySelector('#usercardDivider p');
+const usercardHeading = document.querySelector('#special');
+const backToHome = document.querySelector('#special span');
+const showMatchesButton = document.querySelector('#showMatchesButton');
 
 const buttonAnimation = document.querySelector('.buttonAnimation');
 const profileSection = document.querySelectorAll('.profileSection');
@@ -323,7 +325,19 @@ getprofileButton.addEventListener('click', function () {
     mainAppPage.forEach(element => {
         element.classList.remove('show');
     });
+
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 });
+
+backToHome.addEventListener('click', function () {
+    usercardDivider.classList.remove('show');
+
+    mainAppPage.forEach(element => {
+        element.classList.add('show');
+    });
+
+})
 
 showMatchesButton.addEventListener('click', function () {
 
@@ -341,6 +355,7 @@ showMatchesButton.addEventListener('click', function () {
     });
 
     specialNumber = 1;
+  
     
     profileSection.forEach(element => {
         element.classList.add('show');
