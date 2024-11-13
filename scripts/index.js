@@ -1,3 +1,6 @@
+const password = document.querySelector('#password');
+const passwordIncorrect = document.querySelector('#passwordIncorrect');
+
 const login1 = document.querySelector('#login1');
 const login2 = document.querySelector('#login2');
 
@@ -182,6 +185,21 @@ const data = [
     }
 ]
 
+login1.addEventListener('click', function (ele) {
+    ele.preventDefault();
+    if (password.value == 'blinddate') {
+
+        pageone.classList.add('hide');
+        pagetwo[0].classList.add('show');
+        pagetwotext[0].classList.add('show');
+        showAnimation1();
+    }
+    else {
+        passwordIncorrect.classList.add('show');
+    }
+
+})
+
 login2.addEventListener('click', function () {
     pageone.classList.add('hide');
     pagetwo[0].classList.add('show');
@@ -343,11 +361,11 @@ backToHome.addEventListener('click', function () {
 
 showMatchesButton.addEventListener('click', function () {
 
-// the statement is to empty the profile matches div so that it can be empty when 
-// new matches are added for another person
+    // the statement is to empty the profile matches div so that it can be empty when 
+    // new matches are added for another person
     profileMatches.innerHTML = '';
 
-// the statement is to prepare the animation before running the animation function
+    // the statement is to prepare the animation before running the animation function
     circle3.forEach(element => {
         element.classList.remove('show');
     });
@@ -362,9 +380,9 @@ showMatchesButton.addEventListener('click', function () {
     });
 
     specialNumber = 1;
-  
-        profileSection.classList.add('show');
-    
+
+    profileSection.classList.add('show');
+
 
     pagetwotext[1].classList.add('show');
     pagetwo[1].classList.add('show');
@@ -375,7 +393,7 @@ showMatchesButton.addEventListener('click', function () {
 
 const profileMatches = document.querySelector('#profileMatches');
 
-const random = [1,2,3,4,5];
+const random = [1, 2, 3, 4, 5];
 
 function populateProfileMatches() {
 

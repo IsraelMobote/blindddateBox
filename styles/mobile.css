@@ -94,6 +94,15 @@ h1 {
     border: 2px solid yellow;
 }
 
+.loginpage #passwordIncorrect {
+    display: none;
+}
+
+.loginpage #passwordIncorrect.show {
+    display: block;
+    color: red;
+}
+
 .loginpage hr {
     width: 80%;
     margin: 1.5rem auto;
