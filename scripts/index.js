@@ -391,6 +391,9 @@ function populateProfileMatches() {
         const flipCardFront = document.createElement('div');
         flipCardFront.setAttribute('class', 'flip-card-front');
 
+        const percentageMatch = document.createElement('p');
+        percentageMatch.textContent = `PercentageMatch : 50%`;
+
         const personality = document.createElement('p');
         personality.textContent = `Personality : ${'null'}`;
 
@@ -403,6 +406,7 @@ function populateProfileMatches() {
         const look = document.createElement('p');
         look.textContent = `Look : ${'null'}`;
 
+        flipCardFront.append(percentageMatch);
         flipCardFront.append(personality);
         flipCardFront.append(ageRange);
         flipCardFront.append(height);
