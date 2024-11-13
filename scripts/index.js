@@ -2,56 +2,100 @@ const login1 = document.querySelector('#login1');
 const login2 = document.querySelector('#login2');
 
 const pageone = document.querySelector('.pageone');
-const pagetwo = document.querySelector('.pagetwo');
-const pagetwotext = document.querySelector('.pagetwotext');
+const pagetwo = document.querySelectorAll('.pagetwo');
+const pagetwotext = document.querySelectorAll('.pagetwotext');
 const mainAppPage = document.querySelectorAll('.mainAppPage');
 
 
-const circle1 = document.querySelector('#circle1');
-const circle2 = document.querySelector('#circle2');
-const circle3 = document.querySelector('#circle3');
-const circle4 = document.querySelector('#circle4');
-const circle5 = document.querySelector('#circle5');
-const circle6 = document.querySelector('#circle6');
+const circle1 = document.querySelectorAll('.circle1');
+const circle2 = document.querySelectorAll('.circle2');
+const circle3 = document.querySelectorAll('.circle3');
+const circle4 = document.querySelectorAll('.circle4');
+const circle5 = document.querySelectorAll('.circle5');
+const circle6 = document.querySelectorAll('.circle6');
 
-circle1.classList.add('show');
-circle2.classList.add('show');
+circle1.forEach(element => {
+    element.classList.add('show');
+});
+circle2.forEach(element => {
+    element.classList.add('show');
+});
 
 function showAnimation1() {
     setTimeout(() => {
-        circle3.classList.add('show');
+        circle3.forEach(element => {
+            element.classList.add('show');
+        });
         setTimeout(() => {
-            circle4.classList.add('show');
+            circle4.forEach(element => {
+                element.classList.add('show');
+            });
             setTimeout(() => {
-                circle5.classList.add('show');
+                circle5.forEach(element => {
+                    element.classList.add('show');
+                });
                 setTimeout(() => {
-                    circle6.classList.add('show');
+                    circle6.forEach(element => {
+                        element.classList.add('show');
+                    });
                     setTimeout(() => {
-                        circle3.classList.remove('show');
-                        circle4.classList.remove('show');
-                        circle5.classList.remove('show');
-                        circle6.classList.remove('show');
+                        circle3.forEach(element => {
+                            element.classList.remove('show');
+                        });
+                        circle4.forEach(element => {
+                            element.classList.remove('show');
+                        });
+                        circle5.forEach(element => {
+                            element.classList.remove('show');
+                        });
+                        circle6.forEach(element => {
+                            element.classList.remove('show');
+                        });
                         setTimeout(() => {
-                            circle3.classList.add('show');
+                            circle3.forEach(element => {
+                                element.classList.add('show');
+                            });
                             setTimeout(() => {
-                                circle4.classList.add('show');
+                                circle4.forEach(element => {
+                                    element.classList.add('show');
+                                });
                                 setTimeout(() => {
-                                    circle5.classList.add('show');
+                                    circle5.forEach(element => {
+                                        element.classList.add('show');
+                                    });
                                     setTimeout(() => {
-                                        circle6.classList.add('show');
+                                        circle6.forEach(element => {
+                                            element.classList.add('show');
+                                        });
                                         setTimeout(() => {
-                                            circle3.classList.remove('show');
-                                            circle4.classList.remove('show');
-                                            circle5.classList.remove('show');
-                                            circle6.classList.remove('show');
+                                            circle3.forEach(element => {
+                                                element.classList.remove('show');
+                                            });
+                                            circle4.forEach(element => {
+                                                element.classList.remove('show');
+                                            });
+                                            circle5.forEach(element => {
+                                                element.classList.remove('show');
+                                            });
+                                            circle6.forEach(element => {
+                                                element.classList.remove('show');
+                                            });
                                             setTimeout(() => {
-                                                circle3.classList.add('show');
+                                                circle3.forEach(element => {
+                                                    element.classList.add('show');
+                                                });
                                                 setTimeout(() => {
-                                                    circle4.classList.add('show');
+                                                    circle4.forEach(element => {
+                                                        element.classList.add('show');
+                                                    });
                                                     setTimeout(() => {
-                                                        circle5.classList.add('show');
+                                                        circle5.forEach(element => {
+                                                            element.classList.add('show');
+                                                        });
                                                         setTimeout(() => {
-                                                            circle6.classList.add('show');
+                                                            circle6.forEach(element => {
+                                                                element.classList.add('show');
+                                                            });
                                                             setTimeout(() => {
                                                                 hidePageTwo();
                                                             }, 500);
@@ -140,18 +184,29 @@ const data = [
 
 login2.addEventListener('click', function () {
     pageone.classList.add('hide');
-    pagetwo.classList.add('show');
-    pagetwotext.classList.add('show');
+    pagetwo[0].classList.add('show');
+    pagetwotext[0].classList.add('show');
 
     showAnimation1();
 })
 
 function hidePageTwo() {
-    pagetwo.classList.remove('show');
-    pagetwotext.classList.remove('show');
-    mainAppPage.forEach(element => {
-        element.classList.add('show');
+    pagetwo.forEach(element => {
+        element.classList.remove('show');
     });
+    pagetwotext.forEach(element => {
+        element.classList.remove('show');
+    });
+
+    if (specialNumber == 0) {
+        mainAppPage.forEach(element => {
+            element.classList.add('show');
+        })
+    }
+
+    if (specialNumber == 1) {
+        populateProfileMatches();
+    }
 }
 
 const wards = document.querySelector('#wards');
@@ -175,23 +230,23 @@ function populateSelectForm(list) {
 populateSelectForm(data);
 
 
-userform.addEventListener('submit', function(e) {
+userform.addEventListener('submit', function (e) {
     e.preventDefault();
     if (wards.value != 'Select your ward') {
-      
+
         button1.classList.add('hide');
         userform2.classList.add('show');
 
         editButton.classList.add('show');
         getprofileButton.classList.add('show');
         populateSelectForm2(data);
-        wards.setAttribute('disabled','true');
+        wards.setAttribute('disabled', 'true');
     }
 });
 
 function populateSelectForm2(list) {
     list.forEach(element => {
-       if(wards.value == element.name) {
+        if (wards.value == element.name) {
             const opt = document.createElement('option');
             opt.innerHTML = 'Select name';
             names.append(opt);
@@ -200,12 +255,12 @@ function populateSelectForm2(list) {
                 option.innerHTML = name;
                 names.append(option);
             });
-       }
+        }
     });
 
 }
 
-editButton.addEventListener('click', function() {
+editButton.addEventListener('click', function () {
 
     button1.classList.remove('hide');
 
@@ -221,13 +276,13 @@ const getprofileButton = document.querySelector('#getprofile');
 
 const usercard = document.querySelector('#usercard');
 
-const cardLine = document.querySelector('.cardLine');
+const cardLine = document.querySelectorAll('.cardLine');
 
 function populateUsercard() {
 
     usercard.innerHTML = '';
     const profileImg = document.createElement('img');
-    profileImg.setAttribute('src','images/profile.jpg');
+    profileImg.setAttribute('src', 'images/profile.jpg');
     const div = document.createElement('div');
 
     usercard.append(profileImg);
@@ -247,14 +302,94 @@ function populateUsercard() {
         usercard.append(div);
         number = number + 1;
         console.log(number);
-    }  )
+    })
 };
 
 
-const cardfields = ['Name','Ward', 'Height','Age-range' , 'Personality', 'Look', 'Hobbies','Dislike'];
+const cardfields = ['Name', 'Ward', 'Height', 'Age-range', 'Personality', 'Look', 'Hobbies', 'Dislike'];
+const usercardDivider = document.querySelector('#usercardDivider');
+const showMatchesButton = document.querySelector('#usercardDivider p');
 
-getprofileButton.addEventListener('click', function() {
-    cardLine.classList.add('show');
-    usercard.classList.add('show');
+const buttonAnimation = document.querySelector('.buttonAnimation');
+const profileSection = document.querySelectorAll('.profileSection');
+
+let specialNumber = 0
+
+
+getprofileButton.addEventListener('click', function () {
     populateUsercard();
+    usercardDivider.classList.add('show');
+
+    mainAppPage.forEach(element => {
+        element.classList.remove('show');
+    });
 });
+
+showMatchesButton.addEventListener('click', function () {
+
+    circle3.forEach(element => {
+        element.classList.remove('show');
+    });
+    circle4.forEach(element => {
+        element.classList.remove('show');
+    });
+    circle5.forEach(element => {
+        element.classList.remove('show');
+    });
+    circle6.forEach(element => {
+        element.classList.remove('show');
+    });
+
+    specialNumber = 1;
+    
+    profileSection.forEach(element => {
+        element.classList.add('show');
+    });
+
+    pagetwotext[1].classList.add('show');
+    pagetwo[1].classList.add('show');
+    showAnimation1();
+
+
+});
+
+const profileMatches = document.querySelector('#profileMatches');
+
+
+function populateProfileMatches() {
+
+    profileMatches.innerHTML = '';
+
+    cardfields.forEach(element => {
+        const firstDiv = document.createElement('div');
+        firstDiv.setAttribute('class', 'flip-card');
+
+        const innerDiv = document.createElement('div');
+        innerDiv.setAttribute('class', 'flip-card-inner');
+
+        const flipCardFront = document.createElement('div');
+        flipCardFront.setAttribute('class', 'flip-card-front');
+
+        const heading = document.createElement('h1');
+        heading.textContent = element;
+
+        flipCardFront.append(heading);
+
+        const flipCardBack = document.createElement('div');
+        flipCardBack.setAttribute('class', 'flip-card-back');
+
+        const img = document.createElement('img');
+        img.setAttribute('src', 'images/guadalajara-mexico-temple.jpg');
+
+        flipCardBack.append(img);
+
+        innerDiv.append(flipCardFront);
+        innerDiv.append(flipCardBack);
+
+        firstDiv.append(innerDiv);
+
+        profileMatches.append(firstDiv);
+
+    });
+
+};
